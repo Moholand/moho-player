@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moho Player</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/2b1f9f50c4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="audio-player">
+            <div id="player-container">
+                <audio id="player-audio"></audio>
+                <div id="btn">
+                    <div id="prev" class="play-btn">
+                        <i class="fas fa-backward"></i>
+                    </div>
+                    <div id="play-pause" class="play-btn">
+                        <button id="play"></button>
+                        <button id="pause"></button>
+                    </div>
+                    <div id="next" class="play-btn">
+                        <i class="fas fa-forward"></i>
+                    </div>
+                </div>
+                <div class="clear-fix"></div>
+                <div id="time-line">
+                    <div id="base-time-line"></div>
+                    <div id="elapsed-time-line"></div>
+                    <div id="time-line-pointer"></div>
+                </div>
+                <div id="timer-container">
+                    <p id="current-time">0:00</p>
+                    <p id="total-time">0:00</p>
+                    <div id="play-back-rate">
+                        <button id="half-speed">0.5x</button>
+                        <button class="active-speed" id="normal-speed">1.0x</button>
+                        <button id="high-speed">1.5x</button>
+                    </div>
+                    <div id="shuffle-mode">
+                        <i class="fas fa-random"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="cover">
+                <div id="volume-container">
+                    <div id="volume-icon">
+                        <div id="unmute_icon">
+                            <i class="fas fa-volume-up"></i>
+                            <i class="fas fa-volume"></i>
+                            <i class="fas fa-volume-down"></i>
+                            <i class="fas fa-volume-off"></i>
+                        </div>
+                        <div id="mute_icon">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+                    </div>
+                    <div id="volume-bar-container">
+                        <div id="main-volume-bar"></div>
+                        <div id="on-volume-bar"></div>
+                        <div id="volume-bar-pointer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="play-list">
+        <li data-song="Skyfall.mp3" data-cover="Skyfall.jpg" data-artist="ADELE">Skyfall.mp3</li>
+        <li data-song="Doin-Time.mp3" data-cover="Doin-Time.jpg" data-artist="Lana-Del-Rey">Doin-Time.mp3</li>
+        <li data-song="Night-Changes.mp3" data-cover="Night-Changes.jpg" data-artist="One-Direction">Night-Changes.mp3</li>
+        <li data-song="Stuck-with-U.mp3" data-cover="Stuck-with-U.jpg" data-artist="Justin-bieber">Stuck-with-U.mp3</li>
+        <li data-song="Sweet-Creature.mp3" data-cover="Sweet-Creature.jpg" data-artist="Harry-styles">Sweet-Creature.mp3</li>
+    </ul>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

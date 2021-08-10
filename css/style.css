@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url("../fonts/Vazir.eot"); /* IE9 Compact Modes */
+    src: url("../fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Vazir.woff2") format("woff2"),
+    url("../fonts/Vazir.woff") format("woff"),    
+    url("../fonts/Vazir.ttf") format("truetype"); /* Safari - Android - IOS */
+}
+
+body {
+    font-family: "Vazir" !important;
+    line-height: 1.6;
+    font-size: 13px;
+    background: url('../img/bg.png');
+}
+
+.container {
+    width: 920px;
+    height: 185px;
+    margin: 80px auto 0 auto;
+    overflow: auto;
+    border: 1px #707070 solid;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.audio-player {
+    display: flex;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+#player-container {
+    width: 80%;
+    border-bottom: 1px #707070 solid;
+}
+
+#btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 20px auto;
+    margin-top: 30px;
+    margin-left: 265px;
+}
+
+.play-btn {
+    font-size: 27px;
+    cursor: pointer;
+}
+
+#play-pause {
+    position: relative;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+#prev {
+    color: rgb(194, 194, 194);
+    margin-top: 3px;
+}
+
+#play {
+    width: 35px;
+    height: 35px;
+    background: url('../img/play.png') no-repeat;
+    margin-top: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    z-index: 12;
+}
+
+#pause {
+    width: 35px;
+    height: 35px;
+    background: url('../img/pause.png') no-repeat;
+    margin-top: 6px;
+    opacity: 0;
+    transform: scale(0.7, 0.7);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index: 8;
+}
+
+#next {
+    color: rgb(194, 194, 194);
+    margin-top: 3px;
+}
+
+#cover {
+    width: 20%;
+    height: 185px;
+    position: relative;
+}
+
+#volume-container {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+}
+
+#volume-bar-container {
+    width: 64%;
+    margin-left: 8%;
+    margin-right: 8%;
+    height: 100%;
+    position: relative;
+}
+
+#main-volume-bar {
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    position: absolute;
+    top: 25px;
+}
+
+#on-volume-bar {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background: #F0603C;
+}
+
+#volume-bar-pointer {
+    position: absolute;
+    z-index: 12;
+    left: 100%;
+    /* transform: translate(0,-3px); */
+    background: #ffffff;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 40%);
+    cursor: pointer;
+    top: 24px;
+    transform: translate(-7px,-3px);
+}
+
+#volume-bar-pointer:active {
+    width: 14px;
+    height: 14px;
+    transform: translate(-9px,-5px);
+}
+
+#volume-icon {
+    width: 20%;
+    height: 80%;
+    padding-left: 3px;
+    padding-top: 1px;
+}
+
+#unmute_icon {
+    font-size: 30px;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    position: relative;
+    height: 100%;
+    left: 10px;
+    cursor: pointer;
+}
+
+#unmute_icon i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#mute_icon {
+    font-size: 30px;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    transform: scale(0.7,0.7);
+    position: absolute;
+    height: 80%;
+    left: 13px;
+    top: 6px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+#time-line {
+    width: 500px;
+    height: 6px;
+    position: relative;
+    margin: 20px auto;
+    margin-top: 40px;
+}
+
+#base-time-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #e9e9e9;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#elapsed-time-line {
+    position: absolute;
+    top: 0;
+    z-index: 11;
+    left: 0;
+    background: #F0603C;
+    height: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#time-line-pointer {
+    position: absolute;
+    top: 0;
+    z-index: 12;
+    left: 0;
+    transform: translate(0,-3px);
+    background: #ffffff;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 40%);
+    cursor: pointer;
+}
+
+#time-line-pointer:active {
+    width: 14px;
+    height: 14px;
+    transform: translate(0,-5px);
+}
+
+#timer-container {
+    position: relative;
+}
+
+#current-time {
+    position: absolute;
+    top: 0;
+    left: 120px;
+}
+
+#total-time {
+    position: absolute;
+    top: 0;
+    right: 120px;
+}
+
+#play-back-rate {
+    position: absolute;
+    top: -5px;
+    left: 370px;
+}
+
+#play-back-rate button {
+    font-size: 11px;
+    margin: 0 5px;
+    padding: 6px 2px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#play-back-rate button.active-speed {
+    background: #F0603C;
+    border: solid 1px #F0603C;
+    color: #f1f1f1;
+}
+
+#shuffle-mode i {
+    position: absolute;
+    top: -5px;
+    left: 250px;
+    background: rgb(239, 239, 239);
+    padding: 3px;
+    border-radius: 10px;
+}
+
+#shuffle-mode.active-shuffle i {
+    background: #F0603C;
+    border: solid 1px #F0603C;
+    color: #f1f1f1;
+}
+
+.play-list {
+    width: 920px;
+    height: 450px;
+    margin: 0px auto;
+    overflow: auto;
+    background-color: #fff;
+    border: 1px #707070 solid;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0px 8px 0 rgb(0 0 0 / 20%);
+    position: relative;
+    padding-top: 5px;
+    margin-top: -5px;
+    z-index: 4;
+}
+
+.play-list li {
+    font-size: 18px;
+    padding: 20px;
+    border-bottom: 1px #c2c2c2 solid;
+    color: #333;
+    cursor: pointer;
+}
+
+.play-list li.active {
+    font-weight: bold;
+    background: #FFE8E2;
+    color: #F0603C;
+}
+
+/* button scale animate */
+.button-animate {
+    animation: scaling 0.3s ease;
+}
+
+@keyframes scaling {
+    0% {transform: scale(1, 1);}
+    50% {transform: scale(0.7, 0.7);}
+    100% {transform: scale(1, 1);}
+}
